@@ -49,6 +49,7 @@ jobs:
         sudo chrpath -r '$ORIGIN/../lib' /opt/couchbase/bin/curl
         sudo cp init.sh /
         sudo mkdir /log
+        sudo chmod a+x /log
         sudo bash entrypoint.sh &
         cd ../../../flowgate-api
         mvn initialize
