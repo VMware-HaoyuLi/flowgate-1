@@ -39,5 +39,5 @@ jobs:
         sudo touch /log/flowgate-api-info.log
         sudo chmod a+x /log/flowgate-api-info.log
         cd $FLOWGATEPWD/flowgate-api
-        sudo mvn initialize
+        sudo mvn clean initialize
         sudo mvn test
