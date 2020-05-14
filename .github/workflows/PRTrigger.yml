@@ -22,7 +22,8 @@ jobs:
       with:
         java-version: 1.8
     - name: install flowgate-common
-
+      env:
+        PWD: pwd
       run: |
-        pwd
+        echo $PWD
         
