@@ -32,6 +32,3 @@ jobs:
         sudo mvn clean install
         cd $FLOWGATEPWD/worker-jobs
         sudo mvn clean install
-        cd $FLOWGATEPWD/flowgate-api
-        sudo mvn clean initialize
-        sudo mvn test
