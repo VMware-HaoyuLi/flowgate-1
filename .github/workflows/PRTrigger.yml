@@ -24,6 +24,20 @@ jobs:
     - name: install flowgate-common
       env:
         PWD: pwd
+        FLOWGATECOMMON: $PWD/flowgate-common
+        COMMONRESTCLIENT: $PWD/common-restclient
+        WORKERJOBS: $PWD/worker-jobs
+        FLOWGATEAPI: $PWD/flowgate-api
       run: |
         echo $PWD
-        
+        docker pull alberthaoyu/flowgate-couchbase:v1.0
+        docker run -itd -p 8091:8091 alberthaoyu/flowgate-couchbase:v1.0
+        cd $FLOWGATECOMMON
+        mvn install
+        cd $COMMONRESTCLIENT
+        mvn install
+        cd $WORKERJOBS
+        mvn install
+        cd $FLOWGATEAPI
+        mvn initialize
+        mvn test
