@@ -24,33 +24,5 @@ jobs:
     - name: install flowgate-common
 
       run: |
-        export CB_VERSION=6.0.0
-        export CB_RELEASE_URL=https://packages.couchbase.com/releases
-        export CB_PACKAGE=couchbase-server-community_6.0.0-ubuntu16.04_amd64.deb
-        export CB_SHA256=949b1ded72776a557b9cd3ac89253a4fe6aed079966a4057c5aec41ae5a30ece
-        export PATH=$PATH:/opt/couchbase/bin:/opt/couchbase/bin/tools:/opt/couchbase/bin/install
-        export INSTALL_DONT_START_SERVER=1
-        cd flowgate-common
-        mvn install
-        cd ../common-restclient
-        mvn install
-        cd ../worker-jobs
-        mvn install
-        cd ../make/maven-docker-build/database-build
-        sudo apt-get install -yq zip runit wget python-httplib2 chrpath tzdata lsof lshw sysstat net-tools numactl
-        sudo apt-get autoremove
-        sudo apt-get clean
-        sudo groupadd -g 10000 couchbase
-        sudo useradd couchbase -u 10000 -g couchbase -M
-        sudo wget -N $CB_RELEASE_URL/$CB_VERSION/$CB_PACKAGE
-        echo "$CB_SHA256  $CB_PACKAGE" | sha256sum -c -
-        sudo dpkg -i ./$CB_PACKAGE
-        sudo rm -f ./$CB_PACKAGE
-        sudo chrpath -r '$ORIGIN/../lib' /opt/couchbase/bin/curl
-        sudo cp init.sh /
-        sudo mkdir /log
-        sudo chmod a+x /log
-        sudo bash entrypoint.sh &
-        cd ../../../flowgate-api
-        sudo mvn initialize
-        sudo mvn test
+        pwd
+        
