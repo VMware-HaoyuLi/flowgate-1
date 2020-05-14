@@ -21,20 +21,17 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: install flowgate-common
-      env:
-        PWD: pwd
+    - name: test flowgate-api
       run: |
-        echo $PWD
         export FLOWGATEPWD=$PWD
         docker pull alberthaoyu/flowgate-couchbase:v1.0
         docker run -itd -p 8091:8091 alberthaoyu/flowgate-couchbase:v1.0
         cd $FLOWGATEPWD/flowgate-common
-        mvn install
+        sudo mvn clean install
         cd $FLOWGATEPWD/common-restclient
-        mvn install
+        sudo mvn clean install
         cd $FLOWGATEPWD/worker-jobs
-        mvn install
+        sudo mvn clean install
         sudo mkdir /log/
         sudo touch /log/flowgate-api-info.log
         sudo chmod a+x /log/flowgate-api-info.log
