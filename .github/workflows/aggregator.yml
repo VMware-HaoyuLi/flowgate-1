@@ -1,12 +1,12 @@
-name: test flowgate-api
+name: test aggregator
 
 on:
   push:
     paths:
-      - 'flowgate-api/**'
+      - 'aggregator/**'
   pull_request:
     paths:
-      - 'flowgate-api/**'
+      - 'aggregator/**'
 
 jobs:
   build:
@@ -19,17 +19,14 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: test flowgate-api
+    - name: test aggregator
       run: |
         export FLOWGATEPWD=$PWD
-        docker pull alberthaoyu/flowgate-couchbase:v1.0
-        docker run -itd -p 8091-8096:8091-8096 -p 18091-18096:18091-18096 -p 11210-11211:11210-11211 -p 11207:11207 alberthaoyu/flowgate-couchbase:v1.0
         cd $FLOWGATEPWD/flowgate-common
         sudo mvn clean install
         cd $FLOWGATEPWD/common-restclient
         sudo mvn clean install
         cd $FLOWGATEPWD/worker-jobs
         sudo mvn clean install
-        cd $FLOWGATEPWD/flowgate-api
-        sudo mvn clean initialize
-        sudo mvn test
+        cd $FLOWGATEPWD/aggregator
+        sudo mvn clean test
