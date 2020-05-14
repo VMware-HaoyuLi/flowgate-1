@@ -26,14 +26,15 @@ jobs:
         PWD: pwd
       run: |
         echo $PWD
+        export FLOWGATEPWD=$PWD
         docker pull alberthaoyu/flowgate-couchbase:v1.0
         docker run -itd -p 8091:8091 alberthaoyu/flowgate-couchbase:v1.0
-        cd $PWD/flowgate-common
+        cd $FLOWGATEPWD/flowgate-common
         mvn install
-        cd $PWD/common-restclient
+        cd $FLOWGATEPWD/common-restclient
         mvn install
-        cd $PWD/worker-jobs
+        cd $FLOWGATEPWD/worker-jobs
         mvn install
-        cd $PWD/flowgate-api
+        cd $FLOWGATEPWD/flowgate-api
         mvn initialize
         mvn test
