@@ -36,7 +36,8 @@ jobs:
         cd $FLOWGATEPWD/worker-jobs
         mvn install
         sudo mkdir /log/
-        sudo chmod a+x /log/
+        sudo touch /log/flowgate-api-info.log
+        sudo chmod a+x /log/flowgate-api-info.log
         cd $FLOWGATEPWD/flowgate-api
         mvn initialize
         mvn test
