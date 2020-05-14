@@ -52,5 +52,5 @@ jobs:
         sudo chmod a+x /log
         sudo bash entrypoint.sh &
         cd ../../../flowgate-api
-        mvn initialize
-        mvn test
+        sudo mvn initialize
+        sudo mvn test
