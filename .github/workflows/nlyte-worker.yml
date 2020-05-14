@@ -1,9 +1,6 @@
 name: test nlyte-worker
 
 on:
-  push:
-    paths:
-      - 'nlyte-worker/**'
   pull_request:
     paths:
       - 'nlyte-worker/**'

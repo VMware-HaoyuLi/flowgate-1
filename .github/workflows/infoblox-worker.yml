@@ -1,9 +1,6 @@
 name: test infoblox-worker
 
 on:
-  push:
-    paths:
-      - 'infoblox-worker/**'
   pull_request:
     paths:
       - 'infoblox-worker/**'

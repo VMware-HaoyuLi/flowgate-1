@@ -1,9 +1,6 @@
 name: test flowgate-api
 
 on:
-  push:
-    paths:
-      - 'flowgate-api/**'
   pull_request:
     paths:
       - 'flowgate-api/**'

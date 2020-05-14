@@ -1,9 +1,6 @@
 name: test management
 
 on:
-  push:
-    paths:
-      - 'management/**'
   pull_request:
     paths:
       - 'management/**'
