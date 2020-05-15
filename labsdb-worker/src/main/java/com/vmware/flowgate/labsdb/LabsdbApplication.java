@@ -13,4 +13,4 @@ public class LabsdbApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LabsdbApplication.class, args);
 	}
-}
+}s
