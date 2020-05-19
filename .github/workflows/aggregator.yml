@@ -27,3 +27,13 @@ jobs:
         sudo mvn clean install
         cd $FLOWGATEPWD/aggregator
         sudo mvn clean test
+        
+  coverage:
+    needs: build
+    runs-on: ubuntu-16.04
+    steps:
+    - uses: actions/checkout@master
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        yml: ./codecov.yml
