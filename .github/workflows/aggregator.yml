@@ -1,6 +1,6 @@
 name: test aggregator
 
-on:
+on: 
   pull_request:
     paths:
       - 'aggregator/**'
