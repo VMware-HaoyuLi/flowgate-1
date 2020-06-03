@@ -28,6 +28,7 @@ public class AggregatorJobDispatcher extends BaseJob implements Job {
    @Autowired
    private StringRedisTemplate template;
 
+   
    @Override
    public void execute(JobExecutionContext context) throws JobExecutionException {
       String execountString = template.opsForValue().get(EventMessageUtil.AGGREGATOR_EXECOUNT);
