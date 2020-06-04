@@ -27,5 +27,8 @@ jobs:
         sudo mvn clean install
         cd $FLOWGATEPWD/aggregator
         sudo mvn clean test
+
+  codecov:
+    steps:
+    - uses: codecov/codecov-action@v1
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
