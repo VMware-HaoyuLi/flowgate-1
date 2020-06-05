@@ -43,29 +43,7 @@ public class MessageProcessingTest {
    @InjectMocks
    private AggregatorService aggregatorService = new AggregatorService();
 
-   @Test
-   public void testMessage() {
-      ObjectMapper mapper = new ObjectMapper();
-      String template = "{\"type\":\"InfoBlox\",\"eventUser\":null,\"source\":null,\"target\":null,\"createTime\":%s,\"content\":\"nihao\"}";
-      long time = new Date().getTime();
-      EventMessage message =
-            new EventMessageImpl(
-                  EventType.InfoBlox, null, null, null, time, "nihao");
-      String bb;
-      try {
-      bb = mapper.writeValueAsString(message);
-      Assert.assertEquals(String.format(template, time), bb);
 
-      EventMessage mess2 = mapper.readValue(bb, EventMessageImpl.class);
-      Assert.assertEquals("nihao",mess2.getContent());
-
-      String gg = "{\"type\":\"InfoBlox\",\"createTime\":1539073715966,\"content\":\"helloworld\"}";
-      EventMessage mess3 = mapper.readValue(gg, EventMessageImpl.class);
-      Assert.assertEquals("helloworld", mess3.getContent());
-      }catch(IOException e) {
-        Assert.fail();
-      }
-   }
 
 
 

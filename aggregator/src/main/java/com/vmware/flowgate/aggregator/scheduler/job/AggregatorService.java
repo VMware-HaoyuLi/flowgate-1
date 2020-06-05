@@ -291,7 +291,9 @@ public class AggregatorService implements AsyncService {
         restClient.saveAssets(needToUpdateServer);
       }
    }
-
+   public void testNothing() {
+	   List<Asset> needToUpdate = new ArrayList<Asset>();
+   }
    public List<Asset> removePduFromServer(Asset[] servers, HashSet<String> removedPduIds) {
       List<Asset> needToUpdate = new ArrayList<Asset>();
       for(Asset server : servers) {
