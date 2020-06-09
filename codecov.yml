@@ -7,8 +7,32 @@ coverage:
   range: "10...100"
   status:
     project:
-      default:
+      default: false
+      aggregator:
         target: auto
         threshold: 0%
-        base: auto
-    patch: off
+        flags:
+          - aggregator
+      infoblox-worker:
+        target: auto
+        threshold: 0%
+        flags:
+          - infoblox-worker
+
+comment:
+  layout: "reach, diff, flags, files"
+  behavior: default
+  require_changes: false
+  require_base: yes
+  require_head: yes
+  branches: null
+
+flags:
+  aggregator:
+    paths:
+      - aggregator/
+    carryforward: false
+  infoblox-worker:
+    paths:
+      - infoblox-worker/
+    carryforward: false
