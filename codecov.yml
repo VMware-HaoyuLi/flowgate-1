@@ -11,28 +11,22 @@ coverage:
       aggregator:
         target: auto
         threshold: 0%
+        base: auto
         flags:
           - aggregator
-      infoblox-worker:
+      infoblox:
         target: auto
         threshold: 0%
+        base: auto
         flags:
-          - infoblox-worker
-
-comment:
-  layout: "reach, diff, flags, files"
-  behavior: default
-  require_changes: false
-  require_base: yes
-  require_head: yes
-  branches: null
+          - infoblox
 
 flags:
   aggregator:
     paths:
       - aggregator/
     carryforward: false
-  infoblox-worker:
+  infoblox:
     paths:
       - infoblox-worker/
     carryforward: false
