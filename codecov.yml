@@ -6,13 +6,18 @@ coverage:
   round: down
   range: "10...100"
   status:
-    project:
+    patch:
       default: false
       aggregator:
         target: auto
         threshold: 0%
         flags:
           - aggregator
+      infoblox-worker:
+        target: auto
+        threshold: 0%
+        flags:
+          - infoblox-worker
     patch: off
 
 comment:
@@ -27,4 +32,8 @@ flags:
   aggregator:
     paths:
       - aggregator/
+    carryforward: false
+  infoblox-worker:
+    paths:
+      - infoblox-worker/
     carryforward: false
