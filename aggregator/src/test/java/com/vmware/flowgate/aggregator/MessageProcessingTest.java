@@ -83,6 +83,7 @@ public class MessageProcessingTest {
       System.out.println(mapper.writeValueAsString(message));
    }
 
+
    @Test
    public void testGetPositionInfo() {
       Asset asset1 = new Asset();
