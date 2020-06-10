@@ -11,13 +11,11 @@ coverage:
       aggregator:
         target: auto
         threshold: 0%
-        base: auto
         flags:
           - aggregator
       infoblox:
         target: auto
         threshold: 0%
-        base: auto
         flags:
           - infoblox
 
