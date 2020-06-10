@@ -30,6 +30,6 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
       with:
-          flags: infoblox-worker
-          name: codecov-infoblox-worker
+          flags: infoblox
+          name: codecov-infoblox
           fail_ci_if_error: true

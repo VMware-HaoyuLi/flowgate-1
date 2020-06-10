@@ -13,11 +13,11 @@ coverage:
         threshold: 0%
         flags:
           - aggregator
-      infoblox-worker:
+      infoblox:
         target: auto
         threshold: 0%
         flags:
-          - infoblox-worker
+          - infoblox
 
 comment:
   layout: "reach, diff, flags, files"
@@ -32,7 +32,7 @@ flags:
     paths:
       - aggregator/
     carryforward: false
-  infoblox-worker:
+  infoblox:
     paths:
       - infoblox-worker/
     carryforward: false
