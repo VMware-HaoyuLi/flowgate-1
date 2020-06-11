@@ -13,32 +13,38 @@ coverage:
         threshold: 0%
         flags:
           - aggregator
+        base: auto
+        paths:
+          - "aggregator"
         if_not_found: success
         if_ci_failed: error
         informational: false
-        only_pulls: false
+        only_pulls: true
       infoblox:
         target: auto
         threshold: 0%
         flags:
           - infoblox
+        base: auto
+        paths:
+          - "infoblox-worker"
         if_not_found: success
         if_ci_failed: error
         informational: false
-        only_pulls: false
+        only_pulls: true
+    patch: off
 
 flags:
   aggregator:
     paths:
       - aggregator/
+    carryforward: true
   infoblox:
     paths:
       - infoblox-worker/
+    carryforward: true
 
 comment:
   layout: "reach, diff, flags, files"
   behavior: default
-  require_changes: false
-  require_base: yes
-  require_head: yes
-  branches: null
+  require_changes: no
