@@ -82,7 +82,7 @@ public class MessageProcessingTest {
       EventMessage message = EventMessageUtil.createEventMessage(EventType.VCenter, EventMessageUtil.VCENTER_SyncData, "");
       System.out.println(mapper.writeValueAsString(message));
    }
-
+   
    @Test
    public void testGetPositionInfo() {
       Asset asset1 = new Asset();

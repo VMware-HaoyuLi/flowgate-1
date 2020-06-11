@@ -38,14 +38,16 @@ flags:
   aggregator:
     paths:
       - aggregator/
+    carryforward: true
   infoblox:
     paths:
       - infoblox-worker/
+    carryforward: true
 
 comment:
   layout: "reach, diff, flags, files"
   behavior: default
-  require_changes: false
-  require_base: yes
-  require_head: yes
-  branches: null
+  require_changes: true
+  require_base: no
+  require_head: no
+  branches: master
