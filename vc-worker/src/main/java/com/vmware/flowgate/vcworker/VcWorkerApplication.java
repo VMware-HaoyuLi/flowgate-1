@@ -14,4 +14,3 @@ public class VcWorkerApplication {
 		SpringApplication.run(VcWorkerApplication.class, args);
 	}
 }
-

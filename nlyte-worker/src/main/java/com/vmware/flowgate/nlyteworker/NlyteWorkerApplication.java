@@ -14,4 +14,3 @@ public class NlyteWorkerApplication {
 		SpringApplication.run(NlyteWorkerApplication.class, args);
 	}
 }
-

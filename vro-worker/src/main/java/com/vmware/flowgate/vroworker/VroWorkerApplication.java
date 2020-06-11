@@ -15,4 +15,3 @@ public class VroWorkerApplication {
 		System.out.println(">>>>>>>>>>>>>>>>Welcome to use VROPS worker!<<<<<<<<<<<<<<<<");
 	}
 }
-
