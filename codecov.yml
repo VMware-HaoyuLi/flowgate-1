@@ -11,8 +11,6 @@ coverage:
       aggregator:
         target: auto
         threshold: 0%
-        branches:
-          - master
         flags:
           - aggregator
         if_not_found: success
@@ -22,8 +20,6 @@ coverage:
       infoblox:
         target: auto
         threshold: 0%
-        branches:
-          - master
         flags:
           - infoblox
         if_not_found: success
