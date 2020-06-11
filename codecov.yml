@@ -9,11 +9,11 @@ coverage:
     project:
       default: false
       aggregator:
-        target: 20%
+        target: auto
         threshold: 0%
         flags:
           - aggregator
-        base: parent
+        base: auto
         paths:
           - "aggregator"
         if_not_found: success
@@ -21,11 +21,11 @@ coverage:
         informational: false
         only_pulls: true
       infoblox:
-        target: 20%
+        target: auto
         threshold: 0%
         flags:
           - infoblox
-        base: parent
+        base: auto
         paths:
           - "infoblox-worker"
         if_not_found: success
@@ -47,7 +47,4 @@ flags:
 comment:
   layout: "reach, diff, flags, files"
   behavior: default
-  require_changes: true
-  require_base: yes
-  require_head: yes
-  branches: master
+  require_changes: no
