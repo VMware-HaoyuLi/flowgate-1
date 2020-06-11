@@ -13,6 +13,9 @@ coverage:
         threshold: 0%
         flags:
           - aggregator
+        base: pr
+        paths:
+          - "aggregator"
         if_not_found: success
         if_ci_failed: error
         informational: false
@@ -22,10 +25,14 @@ coverage:
         threshold: 0%
         flags:
           - infoblox
+        base: pr
+        paths:
+          - "infoblox-worker"
         if_not_found: success
         if_ci_failed: error
         informational: false
         only_pulls: false
+    patch: off
 
 flags:
   aggregator:
