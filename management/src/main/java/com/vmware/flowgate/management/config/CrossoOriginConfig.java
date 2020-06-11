@@ -39,5 +39,7 @@ public class CrossoOriginConfig {
       urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
       return new CorsFilter(urlBasedCorsConfigurationSource);
    }
+   
+   public void tet() {}
 
 }

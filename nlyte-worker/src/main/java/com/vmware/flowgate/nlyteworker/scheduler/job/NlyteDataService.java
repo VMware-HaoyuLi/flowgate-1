@@ -279,7 +279,7 @@ public class NlyteDataService implements AsyncService {
          }
       }
    }
-
+   public void test() {}
    public List<Asset> removePduFromServer(List<Asset> servers, String pduId) {
       List<Asset> needToUpdate = new ArrayList<Asset>();
       for(Asset server : servers) {

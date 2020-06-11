@@ -1,6 +1,5 @@
 codecov:
   require_ci_to_pass: false
-  bot: haoyul
 
 coverage:
   precision: 2
@@ -11,19 +10,8 @@ coverage:
     project:
       default:
         threshold: 0%
-    patch: yes
+    patch: off
     changes: no
-
-
-parsers:
-
-  gcov:
-
-    branch_detection:
-      conditional: yes
-      loop: yes
-      method: no
-      macro: no
 
 comment:
   layout: "reach, diff, flags, files"
