@@ -7,8 +7,24 @@ coverage:
   range: "10...100"
   status:
     project:
-      default:
+      default: false
+      aggregator:
         target: auto
         threshold: 0%
-        base: auto
-    patch: off
+        flags:
+          - aggregator
+      infoblox:
+        target: auto
+        threshold: 0%
+        flags:
+          - infoblox
+
+flags:
+  aggregator:
+    paths:
+      - aggregator/
+    carryforward: false
+  infoblox:
+    paths:
+      - infoblox-worker/
+    carryforward: false
