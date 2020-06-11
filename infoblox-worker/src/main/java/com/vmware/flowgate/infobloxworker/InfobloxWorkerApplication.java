@@ -14,5 +14,3 @@ public class InfobloxWorkerApplication {
 		SpringApplication.run(InfobloxWorkerApplication.class, args);
 	}
 }
-
-

@@ -17,4 +17,3 @@ public class ManagementPortalApplication {
       System.out.println(">>>>>>>>>>>>>>>>Welcome to use Management console!<<<<<<<<<<<<<<<<");
    }
 }
-

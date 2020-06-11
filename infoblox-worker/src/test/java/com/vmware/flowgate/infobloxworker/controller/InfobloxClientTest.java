@@ -78,4 +78,5 @@ public class InfobloxClientTest {
         result.add(infoblox);
         jsonHostNameResult.setResult(result);
     }
+
 }

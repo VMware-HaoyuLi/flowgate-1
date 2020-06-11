@@ -15,4 +15,3 @@ public class FlowgateApiApplication {
       System.out.println(">>>>>>>>>>>>>>>>Welcome to use API service!<<<<<<<<<<<<<<<<");
    }
 }
-
