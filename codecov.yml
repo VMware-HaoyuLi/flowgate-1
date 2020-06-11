@@ -9,29 +9,29 @@ coverage:
     project:
       default: false
       aggregator:
-        target: auto
+        target: 20%
         threshold: 0%
         flags:
           - aggregator
-        base: pr
+        base: parent
         paths:
           - "aggregator"
         if_not_found: success
         if_ci_failed: error
         informational: false
-        only_pulls: false
+        only_pulls: true
       infoblox:
-        target: auto
+        target: 20%
         threshold: 0%
         flags:
           - infoblox
-        base: pr
+        base: parent
         paths:
           - "infoblox-worker"
         if_not_found: success
         if_ci_failed: error
         informational: false
-        only_pulls: false
+        only_pulls: true
     patch: off
 
 flags:
@@ -48,6 +48,6 @@ comment:
   layout: "reach, diff, flags, files"
   behavior: default
   require_changes: true
-  require_base: no
-  require_head: no
+  require_base: yes
+  require_head: yes
   branches: master
