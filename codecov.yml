@@ -10,29 +10,17 @@ coverage:
     project:
       default: false
       aggregator:
-        target: auto
         threshold: 0%
         flags:
           - aggregator
-        base: auto
-        paths:
-          - "aggregator"
         if_not_found: success
         if_ci_failed: error
-        informational: false
-        only_pulls: true
       infoblox:
-        target: auto
         threshold: 0%
         flags:
           - infoblox
-        base: auto
-        paths:
-          - "infoblox-worker"
         if_not_found: success
         if_ci_failed: error
-        informational: false
-        only_pulls: true
     patch: off
     changes: no
 
