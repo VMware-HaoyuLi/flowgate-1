@@ -1,5 +1,5 @@
 codecov:
-  require_ci_to_pass: false
+  require_ci_to_pass: yes
 
 coverage:
   precision: 2
@@ -8,10 +8,53 @@ coverage:
 
   status:
     project:
-      default:
+      default: false
+      aggregator:
+        target: auto
         threshold: 0%
+        flags:
+          - aggregator
+        base: auto
+        paths:
+          - "aggregator"
+        if_not_found: success
+        if_ci_failed: error
+        informational: false
+        only_pulls: true
+      infoblox:
+        target: auto
+        threshold: 0%
+        flags:
+          - infoblox
+        base: auto
+        paths:
+          - "infoblox-worker"
+        if_not_found: success
+        if_ci_failed: error
+        informational: false
+        only_pulls: true
     patch: off
     changes: no
+
+flags:
+  aggregator:
+    paths:
+      - aggregator/
+    carryforward: true
+  infoblox:
+    paths:
+      - infoblox-worker/
+    carryforward: true
+
+parsers:
+
+  gcov:
+
+    branch_detection:
+      conditional: yes
+      loop: yes
+      method: no
+      macro: no
 
 comment:
   layout: "reach, diff, flags, files"
