@@ -99,4 +99,5 @@ public class AggregatorJobDispatcher extends BaseJob implements Job {
       }
       template.opsForValue().set(EventMessageUtil.AGGREGATOR_EXECOUNT, String.valueOf(execount));
    }
+   public void test() {}
 }
