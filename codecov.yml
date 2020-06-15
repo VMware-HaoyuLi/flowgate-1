@@ -8,63 +8,78 @@ coverage:
 
   status:
     project:
-      default: false
+      default:
+        target: auto
       aggregator:
+        target: auto
         threshold: 0%
         flags:
           - aggregator
         if_not_found: success
         if_ci_failed: error
       infoblox:
+        target: auto
         threshold: 0%
         flags:
           - infoblox
         if_not_found: success
         if_ci_failed: error
       api:
+        target: auto
         threshold: 0%
         flags:
           - api
         if_not_found: success
         if_ci_failed: error
       labsdb:
+        target: auto
         threshold: 0%
         flags:
           - labsdb
         if_not_found: success
         if_ci_failed: error
       management:
+        target: auto
         threshold: 0%
         flags:
           - management
         if_not_found: success
         if_ci_failed: error
       nlyte:
+        target: auto
         threshold: 0%
         flags:
           - nlyte
         if_not_found: success
         if_ci_failed: error
       poweriq:
+        target: auto
         threshold: 0%
         flags:
           - poweriq
         if_not_found: success
         if_ci_failed: error
       vc:
+        target: auto
         threshold: 0%
         flags:
           - vc
         if_not_found: success
         if_ci_failed: error
       vro:
+        target: auto
         threshold: 0%
         flags:
           - vro
         if_not_found: success
         if_ci_failed: error
-    patch: off
-    changes: no
+    patch:
+      default:
+        # basic
+        target: auto
+        threshold: 0%
+        base: auto
+
 
 flags:
   aggregator:
