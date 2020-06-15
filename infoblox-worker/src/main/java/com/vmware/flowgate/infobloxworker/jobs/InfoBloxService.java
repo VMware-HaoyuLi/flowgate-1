@@ -143,4 +143,14 @@ public class InfoBloxService implements AsyncService {
       wormholeAPIClient.setServiceKey(serviceKeyConfig.getServiceKey());
       wormholeAPIClient.updateFacility(infoblox);
    }
+   
+   public void test() {
+	   int a = 1;
+	   int b = 2;
+	   int c = a + b;
+	   c++;
+	   for(int i = 0;i < c; i++) {
+		   
+	   }
+   }
 }
