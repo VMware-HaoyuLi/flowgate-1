@@ -56,7 +56,21 @@ public class SyncWiremapDataJobTest {
       MockitoAnnotations.initMocks(this);
 
    }
-
+   @Test
+   public void generatorWiremapDataTest() {
+      Asset assetFromflowgate = createServer();
+      Map<String,String> network = new HashMap<String,String>();
+      network.put("sin2-build-rdev1", "5c778c598ecf859960e2be30");
+      Map<String,String> pdu = new HashMap<String,String>();
+      pdu.put("w3r17c05-pdu4", "wertbhukloiup5996q23df530");
+      List<EndDevice> devices = getDevices();
+      Asset asset = labsdbService.generatorWiremapData(assetFromflowgate,pdu, devices,network);
+      List<String> networks = asset.getSwitches();
+      TestCase.assertEquals("5c778c598ecf859960e2be30", networks.get(0));
+      String device = asset.getJustificationfields().get(FlowgateConstant.NETWORK_PORT_FOR_SERVER);
+      TestCase.assertEquals("01"+FlowgateConstant.SEPARATOR+"sin2-build-rdev1"+FlowgateConstant.SEPARATOR+"onboard-1"+
+      FlowgateConstant.SEPARATOR+""+"5c778c598ecf859960e2be30", device);
+   }
    @Test
    public void getAssetNameIDMapTest() {
       Map<String,String> serverMap = labsdbService.getAssetNameIDMap(null);
@@ -201,21 +215,7 @@ public class SyncWiremapDataJobTest {
       }
    }
 
-   @Test
-   public void generatorWiremapDataTest() {
-      Asset assetFromflowgate = createServer();
-      Map<String,String> network = new HashMap<String,String>();
-      network.put("sin2-build-rdev1", "5c778c598ecf859960e2be30");
-      Map<String,String> pdu = new HashMap<String,String>();
-      pdu.put("w3r17c05-pdu4", "wertbhukloiup5996q23df530");
-      List<EndDevice> devices = getDevices();
-      Asset asset = labsdbService.generatorWiremapData(assetFromflowgate,pdu, devices,network);
-      List<String> networks = asset.getSwitches();
-      TestCase.assertEquals("5c778c598ecf859960e2be30", networks.get(0));
-      String device = asset.getJustificationfields().get(FlowgateConstant.NETWORK_PORT_FOR_SERVER);
-      TestCase.assertEquals("01"+FlowgateConstant.SEPARATOR+"sin2-build-rdev1"+FlowgateConstant.SEPARATOR+"onboard-1"+
-      FlowgateConstant.SEPARATOR+""+"5c778c598ecf859960e2be30", device);
-   }
+
 
    @Test
    public void generatorWiremapDataTest1() {
