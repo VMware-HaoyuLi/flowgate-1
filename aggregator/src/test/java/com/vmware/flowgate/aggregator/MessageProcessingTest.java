@@ -199,4 +199,8 @@ public class MessageProcessingTest {
       TestCase.assertEquals(1, metricsFormulars.size());
       TestCase.assertEquals("asdasdw2213dsdfaewwqe", metricsFormulars.get(FlowgateConstant.PDU).keySet().iterator().next());
    }
+   @Test
+   public void testForTestFunc() {
+     aggregatorService.forTestFunc(0);
+   }
 }
