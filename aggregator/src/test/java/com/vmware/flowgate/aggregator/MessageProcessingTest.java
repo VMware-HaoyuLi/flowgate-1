@@ -405,7 +405,9 @@ public class MessageProcessingTest {
       
       ListOperations<String, String> listOp = Mockito.mock(ListOperations.class);
       ValueOperations<String, String> valueOp = Mockito.mock(ValueOperations.class);
-      SDDCSoftwareConfig[] sDDCSoftwareConfigs = {new SDDCSoftwareConfig(), new SDDCSoftwareConfig()};
+      SDDCSoftwareConfig[] sDDCSoftwareConfigs = new SDDCSoftwareConfig[2];
+      sDDCSoftwareConfigs[0] = Mockito.mock(SDDCSoftwareConfig.class);
+      sDDCSoftwareConfigs[1] = Mockito.mock(SDDCSoftwareConfig.class);
       ResponseEntity<SDDCSoftwareConfig[]> resp = Mockito.mock(ResponseEntity.class);
       List<String> lists = new ArrayList<>();
 
@@ -415,6 +417,9 @@ public class MessageProcessingTest {
 
       when(restClient.getVCServers()).thenReturn(resp);
       when(resp.getBody()).thenReturn(sDDCSoftwareConfigs);
+      
+      when(sDDCSoftwareConfigs[0].checkIsActive()).thenReturn(true);
+      when(sDDCSoftwareConfigs[1].checkIsActive()).thenReturn(true);
       
       when(template.opsForList()).thenReturn(listOp);
       
